@@ -3,12 +3,11 @@ spring:
     active: dev
 ---
 server:
-  port:8080
+  port: 8080
 spring:
-  profiles: dev
+  profiles: test
   application:
-    name: springcloud-config-provider-dept
-
+    name: springcloud-config-test
 eureka:
   client:
     service-url:
@@ -17,12 +16,11 @@ eureka:
       
 ---      
 server:
-  port:8081
+  profiles: dev
+  port: 8081
 spring:
-  profiles: test
   application:
-    name: springcloud-config-provider-dept
-
+    name: springcloud-config-test
 eureka:
   client:
     service-url:
