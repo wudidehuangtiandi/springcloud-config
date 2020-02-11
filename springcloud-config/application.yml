@@ -7,12 +7,13 @@ server:
 spring:
   profiles: dev
   application:
-    name: springcloud-provider-dept
+    name: springcloud-config-provider-dept
 
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:10086/eureka
+     defaultZone:  http://localhost:10086/eureka
+    registry-fetch-interval-seconds: 5 #5秒拉取一次服务 默认为30秒
       
 ---      
 server:
@@ -20,11 +21,11 @@ server:
 spring:
   profiles: test
   application:
-    name: springcloud-provider-dept
+    name: springcloud-config-provider-dept
 
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:10086/eureka
-      
+     defaultZone:  http://localhost:10086/eureka
+    registry-fetch-interval-seconds: 5 #5秒拉取一次服务 默认为30秒
       
