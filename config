@@ -1,0 +1,29 @@
+spring:
+  profiles:
+    active: dev
+---
+server:
+  port: 8080
+spring:
+  profiles: test
+  application:
+    name: springcloud-config-test
+eureka:
+  client:
+    service-url:
+     defaultZone:  http://localhost:10086/eureka
+    registry-fetch-interval-seconds: 5 #5秒拉取一次服务 默认为30秒
+      
+---      
+server:
+  profiles: dev
+  port: 8081
+spring:
+  application:
+    name: springcloud-config-test
+eureka:
+  client:
+    service-url:
+     defaultZone:  http://localhost:10086/eureka
+    registry-fetch-interval-seconds: 5 #5秒拉取一次服务 默认为30秒
+      
